@@ -46,12 +46,15 @@ Yes, Claude Code helped me understand why the original pytest tests were failing
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+Streamlit reruns the Python script from top to bottom whenever the user interacts with certain parts of the app, such as clicking a button or submitting a guess. Normally, variables can get reset during these reruns, but st.session_state allows the app to remember important information between interactions. In my guessing game, session state keeps track of the secret number, attempts, score, game status, and guess history. I learned that resetting session state correctly is important because the New Game button originally failed to reset the status, which prevented me from playing again after winning.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+One habit I want to continue using is testing my code after making changes instead of assuming everything works. In this project, I used pytest and manually tested the Streamlit game to verify that the bugs were actually fixed. I also learned the importance of making Git commits with descriptive messages so I can track my progress.
 - What is one thing you would do differently next time you work with AI on a coding task?
+Next time, I would ask AI to explain its suggested changes before applying them, especially when modifying existing functions. I would also try to identify more edge cases earlier in the debugging process so I can catch problems before they affect other parts of the program.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+This project taught me that AI-generated code is not always correct, even when it looks reasonable. I learned that AI is a useful coding assistant, but I still need to understand, review, and test its suggestions rather than accepting everything automatically.
